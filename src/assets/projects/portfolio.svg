@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f8f6ff"/>
+      <stop offset="100%" stop-color="#ede8fc"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <g transform="translate(60, 45)" filter="url(#cardShadow)">
+    <rect width="1080" height="585" rx="16" fill="#ffffff" stroke="#e2dcfc" stroke-width="1.5"/>
+    
+    <path d="M 0 16 Q 0 0 16 0 L 1064 0 Q 1080 0 1080 16 L 1080 50 L 0 50 Z" fill="#faf9fe"/>
+    <line x1="0" y1="50" x2="1080" y2="50" stroke="#f0ecfd" stroke-width="1.5"/>
+    
+    <circle cx="28" cy="25" r="6" fill="#f87171"/>
+    <circle cx="48" cy="25" r="6" fill="#fbbf24"/>
+    <circle cx="68" cy="25" r="6" fill="#34d399"/>
+
+    <rect x="240" y="12" width="600" height="26" rx="6" fill="#ffffff" stroke="#e5e0fb"/>
+    <text x="540" y="29" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7047eb" text-anchor="middle">https://hanahabtamu.dev</text>
+
+    <text x="50" y="95" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a">HANA<tspan fill="#7047eb">.DEV</tspan></text>
+    <text x="780" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="500" fill="#64748b">About</text>
+    <text x="850" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="500" fill="#64748b">Skills</text>
+    <text x="915" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="500" fill="#64748b">Projects</text>
+    <rect x="990" y="78" width="50" height="28" rx="14" fill="#7047eb"/>
+    <text x="1015" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Talk</text>
+
+    <rect x="50" y="150" width="180" height="30" rx="15" fill="#f3effe" stroke="#ded5f9"/>
+    <text x="140" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#7047eb" text-anchor="middle">&#x1F44B; Hana Habtamu</text>
+
+    <text x="50" y="240" font-family="'Playfair Display', Georgia, serif" font-size="46" font-weight="700" fill="#0f172a">Building Modern</text>
+    <text x="50" y="295" font-family="'Playfair Display', Georgia, serif" font-size="46" font-weight="700" fill="#7047eb">Web Experiences</text>
+    <text x="50" y="345" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="600" fill="#334155">That Make an Impact.</text>
+
+    <text x="50" y="395" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#64748b">Information Systems Student &amp; Full-Stack Developer</text>
+    <text x="50" y="420" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#94a3b8">React &bull; Vite &bull; Laravel &bull; MySQL &bull; Clean Editorial UI</text>
+
+    <rect x="50" y="460" width="160" height="42" rx="8" fill="#7047eb"/>
+    <text x="130" y="486" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">View My Work &rarr;</text>
+
+    <g transform="translate(680, 150)">
+      <rect width="350" height="370" rx="16" fill="#f5f1fe" stroke="#e6ddfd"/>
+      
+      <rect x="30" y="40" width="290" height="60" rx="10" fill="#ffffff" stroke="#eee9fc"/>
+      <circle cx="65" cy="70" r="16" fill="#ede8fc"/>
+      <text x="95" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0f172a">React &amp; Vite</text>
+      <text x="95" y="84" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b">Modern Frontend Architecture</text>
+
+      <rect x="30" y="120" width="290" height="60" rx="10" fill="#ffffff" stroke="#eee9fc"/>
+      <circle cx="65" cy="150" r="16" fill="#fdf2f8"/>
+      <text x="95" y="146" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0f172a">Custom CSS System</text>
+      <text x="95" y="164" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b">Lavender &amp; Editorial Typography</text>
+
+      <rect x="30" y="200" width="290" height="60" rx="10" fill="#ffffff" stroke="#eee9fc"/>
+      <circle cx="65" cy="230" r="16" fill="#f0fdf4"/>
+      <text x="95" y="226" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0f172a">100% Responsive</text>
+      <text x="95" y="244" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b">Flawless on Mobile &amp; Desktop</text>
+
+      <rect x="30" y="280" width="290" height="60" rx="10" fill="#ffffff" stroke="#eee9fc"/>
+      <circle cx="65" cy="310" r="16" fill="#eff6ff"/>
+      <text x="95" y="306" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0f172a">Production Ready</text>
+      <text x="95" y="324" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b">Fast, Lightweight &amp; Clean Code</text>
+    </g>
+  </g>
+</svg>

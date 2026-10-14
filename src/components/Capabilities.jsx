@@ -1,34 +1,34 @@
-import { Layout, Server, Database, Lightbulb } from 'lucide-react';
+import { Layers, Globe, Server, Smartphone } from 'lucide-react';
 
 export default function Capabilities() {
   const capabilities = [
     {
       number: '01',
-      title: 'FRONTEND DEVELOPMENT',
+      title: 'SYSTEM DEVELOPMENT',
       description:
-        'Building responsive and interactive interfaces using React, JavaScript, HTML and CSS.',
-      icon: <Layout size={24} color="var(--accent-purple)" />,
+        'Architecting robust information systems, organizational databases, and automated management software.',
+      icon: <Layers size={24} color="var(--accent-purple)" />,
     },
     {
       number: '02',
-      title: 'BACKEND DEVELOPMENT',
+      title: 'WEBSITE & FRONTEND',
       description:
-        'Developing application logic, APIs and server-side systems using Laravel and PHP.',
-      icon: <Server size={24} color="var(--accent-purple)" />,
+        'Building modern, responsive, and high-performance web applications using React, JavaScript, HTML5 and CSS3.',
+      icon: <Globe size={24} color="var(--accent-purple)" />,
     },
     {
       number: '03',
-      title: 'DATABASE MANAGEMENT',
+      title: 'BACKEND DEVELOPMENT',
       description:
-        'Working with databases to organize, store and manage application data.',
-      icon: <Database size={24} color="var(--accent-purple)" />,
+        'Developing server-side architecture, secure business logic, and RESTful APIs using Laravel, PHP and MySQL.',
+      icon: <Server size={24} color="var(--accent-purple)" />,
     },
     {
       number: '04',
-      title: 'PROBLEM SOLVING',
+      title: 'MOBILE APP DEVELOPMENT',
       description:
-        'Turning real-world requirements into practical software solutions.',
-      icon: <Lightbulb size={24} color="var(--accent-purple)" />,
+        'Engineering intuitive, touch-friendly mobile application interfaces and responsive cross-device experiences.',
+      icon: <Smartphone size={24} color="var(--accent-purple)" />,
     },
   ];
 
@@ -46,19 +46,13 @@ export default function Capabilities() {
         </div>
 
         {/* 4 Capability Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '24px',
-          }}
-        >
+        <div className="grid-cols-4-responsive">
           {capabilities.map((cap, index) => (
             <div
               key={index}
               className="editorial-card"
               style={{
-                padding: '34px 28px',
+                padding: 'clamp(24px, 4.5vw, 34px) clamp(18px, 4vw, 28px)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',

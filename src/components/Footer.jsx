@@ -22,8 +22,8 @@ export default function Footer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '40px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 210px), 1fr))',
+            gap: 'clamp(28px, 4vw, 40px)',
             paddingBottom: '30px',
             borderBottom: '1px solid var(--border-subtle)',
           }}
@@ -53,11 +53,11 @@ export default function Footer() {
                   textTransform: 'uppercase',
                 }}
               >
-                FULL-STACK DEVELOPER
+                SYSTEM, WEB & MOBILE DEVELOPER
               </div>
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: 1.6 }}>
-              Building modern web solutions with purpose.
+              System developer, website developer, backend & frontend developer, and mobile application developer.
             </p>
           </div>
 
@@ -136,12 +136,12 @@ export default function Footer() {
                   EMAIL
                 </span>
                 <a
-                  href="mailto:hello@hanahabtamu.dev"
+                  href="mailto:hanahabtamu735@gmail.com"
                   style={{ color: 'var(--text-dark)', fontWeight: 500 }}
                   onMouseEnter={(e) => (e.target.style.color = 'var(--accent-purple)')}
                   onMouseLeave={(e) => (e.target.style.color = 'var(--text-dark)')}
                 >
-                  hello@hanahabtamu.dev
+                  hanahabtamu735@gmail.com
                 </a>
               </div>
 

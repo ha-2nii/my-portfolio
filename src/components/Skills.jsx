@@ -1,10 +1,14 @@
 import { skillGroups } from '../data/skills';
-import { Layout, Server, Database, Wrench, Check } from 'lucide-react';
+import { Layout, Server, Database, Wrench, Check, Smartphone, Layers } from 'lucide-react';
 
 const categoryIcons = {
+  'Frontend & Mobile Development': <Smartphone size={20} color="var(--accent-purple)" />,
+  'Backend & System Development': <Layers size={20} color="var(--accent-purple)" />,
+  'Database Management': <Database size={20} color="var(--accent-purple)" />,
+  'Tools & Engineering Practices': <Wrench size={20} color="var(--accent-purple)" />,
+  // Fallbacks
   'Frontend Development': <Layout size={20} color="var(--accent-purple)" />,
   'Backend Development': <Server size={20} color="var(--accent-purple)" />,
-  'Database Management': <Database size={20} color="var(--accent-purple)" />,
   'Tools & Practices': <Wrench size={20} color="var(--accent-purple)" />,
 };
 
@@ -27,8 +31,8 @@ export default function Skills() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '28px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: 'clamp(20px, 3.5vw, 28px)',
           }}
         >
           {skillGroups.map((group, index) => (
@@ -36,7 +40,7 @@ export default function Skills() {
               key={index}
               className="editorial-card"
               style={{
-                padding: '32px 26px',
+                padding: 'clamp(22px, 4vw, 32px) clamp(18px, 3.5vw, 26px)',
                 borderRadius: 'var(--radius-lg)',
                 backgroundColor: '#ffffff',
                 display: 'flex',

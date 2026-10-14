@@ -10,6 +10,10 @@ export const projects = [
     title: 'Ethiopian Orthodox Tewahedo Church (EOTC) Platform',
     type: 'Community & Faith Portal',
     image: orthodoxImg,
+    displayUrl: 'eotc-platform.org',
+    liveUrl: 'https://eotc-platform.vercel.app',
+    githubUrl: 'https://github.com/hanahabtamu/eotc-platform',
+    status: 'Live Platform',
     description:
       'A comprehensive web platform for the Ethiopian Orthodox Tewahedo Church featuring scripture study, church locator, spiritual resources, hierarchy directory, and member management.',
     technologies: ['Laravel', 'PHP', 'MySQL', 'Tailored UI'],
@@ -26,6 +30,10 @@ export const projects = [
     title: 'Nash Dental Clinic Website',
     type: 'Healthcare Services Platform',
     image: dentalImg,
+    displayUrl: 'nashdentalclinic.et',
+    liveUrl: 'https://nashdentalclinic.vercel.app',
+    githubUrl: 'https://github.com/hanahabtamu/nash-dental-clinic',
+    status: 'Live Client Site',
     description:
       'A modern, patient-first web presence for Nash Dental Clinic, featuring service directories, specialist doctor profiles, online consultation booking, and multi-channel patient contact.',
     technologies: ['React', 'JavaScript', 'HTML5', 'CSS3'],
@@ -42,6 +50,10 @@ export const projects = [
     title: 'Integrated NGO Resource & Sponsorship Management System',
     type: 'NGO Donor, Beneficiary & Staff MIS',
     image: ifsoImg,
+    displayUrl: 'ifso-system.org',
+    liveUrl: 'https://ifso-management.org',
+    githubUrl: 'https://github.com/hanahabtamu/ifso-ngo-management',
+    status: 'Production System',
     description:
       'A robust management information system for the Integrated Family Service Organization (IFSO) connecting foreign donors with vulnerable families, tracking sponsorships, disbursements, and staff visits.',
     technologies: ['React', 'Laravel', 'MySQL', 'Analytics'],
@@ -58,6 +70,10 @@ export const projects = [
     title: 'Personal Developer Portfolio',
     type: 'Personal Branding & Showcase',
     image: portfolioImg,
+    displayUrl: 'hanahabtamu.dev',
+    liveUrl: '#',
+    githubUrl: 'https://github.com/hanahabtamu/my-portfolio',
+    status: 'Active Portfolio',
     description:
       'A bespoke portfolio website designed and engineered from the ground up to showcase my journey as an Information Systems student and full-stack developer with an editorial aesthetic.',
     technologies: ['React', 'Vite', 'CSS3', 'JavaScript'],

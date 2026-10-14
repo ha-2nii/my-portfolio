@@ -1,34 +1,42 @@
 :root {
-  /* Clean White & Soft Lavender Palette */
-  --bg-main: #ffffff;
-  --bg-subtle: #faf9fd;
-  --bg-lavender: #f4f0fd;
-  --bg-lavender-light: #fbf9ff;
-  --bg-lavender-card: #f8f6fe;
+  /* Curated Editorial Palette */
+  --color-smoky-black: #11120D;
+  --color-olive-drab: #565449;
+  --color-bone: #D8CFBC;
+  --color-floral-white: #FFFBF4;
 
-  --text-dark: #0f172a;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  /* Surfaces & Backgrounds */
+  --bg-main: #FFFBF4;
+  --bg-subtle: #F6F1E7;
+  --bg-card: #FFFFFF;
+  --bg-lavender: #EFE9DC;        /* Warm bone tone */
+  --bg-lavender-light: #F9F5EC;  /* Delicate floral tint */
+  --bg-lavender-card: #F4EFE5;
 
-  /* Refined Lavender / Purple Accents */
-  --accent-purple: #7047eb;
-  --accent-purple-hover: #5d34d5;
-  --accent-purple-light: #8f6cf7;
-  --accent-lavender: #ede8fc;
-  --accent-lavender-border: #ded5f9;
-  --accent-soft-tag: #f2eefa;
+  /* Typography */
+  --text-dark: #11120D;          /* Smoky Black */
+  --text-primary: #1C1D17;
+  --text-secondary: #565449;     /* Olive Drab */
+  --text-muted: #7A7869;
+  --text-light: #A4A191;
+
+  /* Accents & Brand Tones (Mapped for seamless component adoption) */
+  --accent-purple: #565449;           /* Olive Drab editorial accent */
+  --accent-purple-hover: #11120D;     /* Smoky Black hover */
+  --accent-purple-light: #737062;
+  --accent-lavender: #EAE3D2;         /* Warm Bone background */
+  --accent-lavender-border: #D8CFBC;  /* Bone border */
+  --accent-soft-tag: #F2ECE0;
 
   /* Borders & Shadows */
-  --border-subtle: #ece8f6;
-  --border-light: #e2dcf2;
-  --border-hover: #7047eb;
+  --border-subtle: #E8E1D2;
+  --border-light: #D8CFBC;            /* Bone */
+  --border-hover: #11120D;            /* Smoky Black */
 
-  --shadow-subtle: 0 2px 12px rgba(112, 71, 235, 0.04);
-  --shadow-card: 0 4px 24px rgba(30, 41, 59, 0.05);
-  --shadow-hover: 0 12px 32px rgba(112, 71, 235, 0.12);
-  --shadow-btn: 0 4px 16px rgba(112, 71, 235, 0.25);
+  --shadow-subtle: 0 2px 14px rgba(17, 18, 13, 0.04);
+  --shadow-card: 0 4px 24px rgba(17, 18, 13, 0.06);
+  --shadow-hover: 0 12px 32px rgba(86, 84, 73, 0.14);
+  --shadow-btn: 0 4px 18px rgba(17, 18, 13, 0.22);
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -127,19 +135,75 @@ button, input, textarea {
 
 /* Layout Utilities */
 .container {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 80px);
+  padding: 0 clamp(16px, 4vw, 56px);
 }
 
 .section {
-  padding: clamp(45px, 5vw, 60px) 0;
+  padding: clamp(40px, 6vw, 70px) 0;
   position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: clamp(35px, 5vw, 45px) 0;
+    padding: clamp(32px, 5vw, 48px) 0;
+  }
+}
+
+/* Responsive Grid Systems */
+.grid-cols-4-responsive {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .grid-cols-4-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .grid-cols-4-responsive {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.grid-cols-2-responsive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 880px) {
+  .grid-cols-2-responsive {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.grid-stats-responsive {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .grid-stats-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grid-stats-responsive {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
@@ -163,13 +227,14 @@ button, input, textarea {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(1.85rem, 5vw, 2.9rem);
   color: var(--text-dark);
   margin-bottom: 18px;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
   color: var(--text-muted);
   line-height: 1.65;
 }
@@ -201,6 +266,7 @@ button, input, textarea {
   justify-content: center;
   gap: 10px;
   padding: 13px 26px;
+  min-height: 44px;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 0.94rem;
@@ -208,18 +274,26 @@ button, input, textarea {
   cursor: pointer;
   border: none;
   outline: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 .btn-primary {
-  background-color: var(--accent-purple);
-  color: #ffffff;
+  background-color: var(--color-smoky-black);
+  color: var(--color-floral-white);
   box-shadow: var(--shadow-btn);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-purple-hover);
+  background-color: var(--color-olive-drab);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(112, 71, 235, 0.35);
+  box-shadow: 0 6px 20px rgba(17, 18, 13, 0.28);
 }
 
 .btn-secondary {
@@ -229,8 +303,8 @@ button, input, textarea {
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
+  border-color: var(--color-olive-drab);
+  color: var(--color-olive-drab);
   background-color: var(--bg-lavender-light);
   transform: translateY(-2px);
 }
@@ -249,8 +323,8 @@ button, input, textarea {
 }
 
 .btn-icon:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
+  border-color: var(--color-olive-drab);
+  color: var(--text-dark);
   background: var(--bg-lavender);
   transform: translateY(-2px);
 }
@@ -265,15 +339,15 @@ button, input, textarea {
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent-purple);
+  color: var(--text-dark);
   letter-spacing: 0.02em;
   transition: all var(--transition-fast);
 }
 
 .skill-tag:hover {
-  background: var(--accent-purple);
-  color: #ffffff;
-  border-color: var(--accent-purple);
+  background: var(--color-smoky-black);
+  color: var(--color-floral-white);
+  border-color: var(--color-smoky-black);
 }
 
 /* Floating Skill Pills on Hero */

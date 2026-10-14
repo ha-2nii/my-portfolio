@@ -1,14 +1,7 @@
-import profileImg from '../assets/profile.jpg';
 import { ArrowRight, ArrowDown } from 'lucide-react';
+import hanaImg from '../assets/hana-hero.jpg';
 
 export default function Hero() {
-  const floatingSkills = [
-    { name: 'React', top: '18%', left: '8%', delay: '0s' },
-    { name: 'Laravel', top: '30%', right: '6%', delay: '1.2s' },
-    { name: 'JavaScript', bottom: '28%', left: '6%', delay: '2.4s' },
-    { name: 'HTML & CSS', bottom: '14%', right: '8%', delay: '3.6s' },
-  ];
-
   return (
     <section
       id="home"
@@ -22,7 +15,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Full viewport grid */}
+      {/* 50/50 Two-column grid */}
       <div
         style={{
           display: 'grid',
@@ -32,14 +25,16 @@ export default function Hero() {
         }}
         className="hero-grid"
       >
-        {/* Left Column — Text Content */}
+        {/* Left Column — Text Introduction (50%) */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            padding: 'clamp(120px, 14vw, 170px) clamp(24px, 5vw, 80px) clamp(60px, 8vw, 100px)',
+            padding: 'clamp(100px, 11vw, 150px) clamp(24px, 5vw, 72px) clamp(40px, 6vw, 80px)',
+            backgroundColor: '#ffffff',
           }}
+          className="hero-text-col"
         >
           {/* Eyebrow Badge */}
           <div
@@ -54,48 +49,64 @@ export default function Hero() {
               color: 'var(--accent-purple)',
               fontSize: '0.85rem',
               fontWeight: 600,
-              marginBottom: '26px',
+              marginBottom: '20px',
               width: 'fit-content',
             }}
           >
-            <span>Hi, I'm Hana Habtamu 👋</span>
+            <span>Hi, I'm Hana Habtamu</span>
           </div>
 
           <h1
             style={{
-              fontSize: 'clamp(2.6rem, 4.5vw, 4rem)',
+              fontSize: 'clamp(2rem, 5vw, 3.8rem)',
               fontWeight: 700,
-              lineHeight: 1.12,
+              lineHeight: 1.14,
               color: 'var(--text-dark)',
-              marginBottom: '22px',
+              marginBottom: '18px',
               letterSpacing: '-0.02em',
             }}
           >
-            Building Modern <br />
-            <span className="accent-text">Web Experiences</span> <br />
-            That Make an Impact.
+            Engineering Systems, <br />
+            <span className="accent-text">Web & Mobile Apps</span> <br />
+            That Deliver Value.
           </h1>
 
           <p
             style={{
-              fontSize: '1.08rem',
+              fontSize: 'clamp(0.96rem, 2.2vw, 1.08rem)',
               color: 'var(--text-secondary)',
               lineHeight: 1.7,
-              maxWidth: '480px',
-              marginBottom: '36px',
+              maxWidth: '520px',
+              marginBottom: '22px',
             }}
           >
-            I'm an Information Systems student and full-stack developer passionate about creating useful, responsive and user-friendly web applications.
+            I'm an Information Systems student, system developer, website developer, backend and frontend developer, and mobile application developer passionate about building reliable software systems, web platforms, and mobile apps.
           </p>
+
+          {/* Specialization Role Badges */}
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '8px',
+              marginBottom: '32px',
+            }}
+          >
+            <span className="skill-tag" style={{ fontSize: '0.78rem' }}>System Developer</span>
+            <span className="skill-tag" style={{ fontSize: '0.78rem' }}>Website Developer</span>
+            <span className="skill-tag" style={{ fontSize: '0.78rem' }}>Frontend Developer</span>
+            <span className="skill-tag" style={{ fontSize: '0.78rem' }}>Backend Developer</span>
+            <span className="skill-tag" style={{ fontSize: '0.78rem' }}>Mobile App Developer</span>
+          </div>
 
           {/* Action Buttons */}
           <div
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '16px',
+              gap: '14px',
               alignItems: 'center',
-              marginBottom: '48px',
+              marginBottom: '40px',
             }}
           >
             <a href="#projects" className="btn btn-primary">
@@ -117,101 +128,52 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column — Full-Height Photo, starts below navbar */}
+        {/* Right Column — Photo fills exactly 100% of the right half with 0 padding */}
         <div
           style={{
             position: 'relative',
+            width: '100%',
+            height: '100%',
+            minHeight: '100vh',
+            padding: 0,
+            margin: 0,
             overflow: 'hidden',
-            backgroundColor: 'var(--bg-lavender)',
-            display: 'flex',
-            alignItems: 'stretch',
-            justifyContent: 'center',
-            paddingTop: '80px',
           }}
           className="hero-image-col"
         >
-          {/* Lavender background fill */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(160deg, #e9e2fb 0%, #f0ecfd 50%, #f8f6ff 100%)',
-              zIndex: 0,
-            }}
-          />
-
-          {/* Profile Image — fills full column height */}
           <img
-            src={profileImg}
-            alt="Hana Habtamu — Full-Stack Developer"
+            src={hanaImg}
+            alt="Hana Habtamu - System, Web & Mobile Developer"
             style={{
-              position: 'relative',
-              zIndex: 1,
               width: '100%',
               height: '100%',
+              minHeight: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 10%',
+              objectPosition: 'center top',
               display: 'block',
-              mixBlendMode: 'multiply',
-              filter: 'contrast(1.04) brightness(1.02)',
+              filter: 'contrast(1.05) brightness(0.97)',
             }}
           />
-
-          {/* Bottom soft fade so image blends into white below */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: '140px',
-              background: 'linear-gradient(to top, var(--bg-lavender) 0%, transparent 100%)',
-              zIndex: 2,
-              pointerEvents: 'none',
-            }}
-          />
-
-          {/* Floating skill pills */}
-          {floatingSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="floating-pill"
-              style={{
-                top: skill.top,
-                bottom: skill.bottom,
-                left: skill.left,
-                right: skill.right,
-                animationDelay: skill.delay,
-                zIndex: 3,
-              }}
-            >
-              <span
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: 'var(--accent-purple)',
-                  flexShrink: 0,
-                }}
-              />
-              <span>{skill.name}</span>
-            </div>
-          ))}
         </div>
       </div>
 
-      {/* Mobile responsive override */}
+      {/* Responsive Styles */}
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 960px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
             min-height: auto !important;
           }
           .hero-image-col {
-            height: 55vw !important;
-            min-height: 280px !important;
-            max-height: 420px !important;
-            order: -1;
+            height: clamp(420px, 70vh, 580px) !important;
+            min-height: auto !important;
+            width: 100% !important;
+          }
+          .hero-image-col img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center 20% !important;
           }
         }
       `}</style>

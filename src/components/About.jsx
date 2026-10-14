@@ -1,12 +1,12 @@
 import workspaceImg from '../assets/workspace.jpg';
-import { ArrowDown, GraduationCap, MapPin, Sparkles } from 'lucide-react';
+import { ArrowDown, GraduationCap, MapPin, Sparkles, Trophy } from 'lucide-react';
 
 export default function About() {
   const stats = [
-    { value: '1+', label: 'YEAR EXPERIENCE' },
-    { value: 'MULTIPLE', label: 'WEB PROJECTS' },
-    { value: 'FULL-STACK', label: 'DEVELOPMENT' },
-    { value: 'CONTINUOUS', label: 'LEARNING' },
+    { value: '2ND', label: 'HACKATHON WINNER' },
+    { value: '1+ YR', label: 'DEV EXPERIENCE' },
+    { value: 'MULTIPLE', label: 'WEB & SYSTEM PROJECTS' },
+    { value: '3RD YR', label: 'INFO SYSTEMS' },
   ];
 
   return (
@@ -14,10 +14,11 @@ export default function About() {
       <div className="container">
         {/* Main 2-Column About Narrative */}
         <div
+          className="about-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '50px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            gap: 'clamp(32px, 5vw, 56px)',
             alignItems: 'center',
             marginBottom: '45px',
           }}
@@ -27,10 +28,10 @@ export default function About() {
             <span className="section-eyebrow">ABOUT ME</span>
             <h2
               style={{
-                fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)',
-                marginBottom: '26px',
+                fontSize: 'clamp(2rem, 4.5vw, 3.2rem)',
+                marginBottom: '22px',
                 color: 'var(--text-dark)',
-                lineHeight: 1.15,
+                lineHeight: 1.16,
               }}
             >
               Turning Ideas Into <br />
@@ -41,21 +42,21 @@ export default function About() {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '18px',
-                fontSize: '1.05rem',
+                gap: '16px',
+                fontSize: 'clamp(0.96rem, 2vw, 1.05rem)',
                 color: 'var(--text-secondary)',
-                lineHeight: 1.75,
-                marginBottom: '36px',
+                lineHeight: 1.72,
+                marginBottom: '32px',
               }}
             >
               <p>
-                I'm <strong>Hana Habtamu</strong>, a third-year Information Systems student at Ambo University, Weliso Campus, and a full-stack developer with practical experience building web applications and management systems.
+                I'm <strong>Hana Habtamu</strong>, a third-year Information Systems student at Ambo University, Weliso Campus. As a <strong>system developer, website developer, backend and frontend developer, and mobile application developer</strong>, I build reliable software architectures, engaging web platforms, and practical digital solutions.
               </p>
               <p>
-                I enjoy coding, exploring new technologies, and learning how things work. My development journey has given me experience across both frontend and backend development, while frontend development has become a particular interest because I enjoy designing interfaces and creating better user experiences.
+                My development experience spans the full lifecycle of modern software: architecting organizational management information systems, crafting intuitive frontend interfaces with React, designing secure backend APIs with Laravel and PHP, and developing user-friendly mobile applications.
               </p>
               <p>
-                I believe good software isn't only about making something work — it's also about making it understandable, useful, responsive and enjoyable to use.
+                I believe good software isn't only about making code work — it's about solving real-world operational problems, optimizing performance, and making digital systems intuitive and enjoyable for users.
               </p>
             </div>
 
@@ -64,8 +65,8 @@ export default function About() {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '12px',
-                marginBottom: '36px',
+                gap: '10px',
+                marginBottom: '32px',
               }}
             >
               <div
@@ -77,7 +78,25 @@ export default function About() {
                   background: 'var(--bg-lavender)',
                   border: '1px solid var(--accent-lavender-border)',
                   borderRadius: 'var(--radius-full)',
-                  fontSize: '0.85rem',
+                  fontSize: '0.84rem',
+                  fontWeight: 600,
+                  color: 'var(--accent-purple)',
+                }}
+              >
+                <Trophy size={16} color="#D97706" />
+                <span>2nd Place Winner • Cursor Hackathon Ambo</span>
+              </div>
+
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '8px 16px',
+                  background: 'var(--bg-lavender)',
+                  border: '1px solid var(--accent-lavender-border)',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: '0.84rem',
                   fontWeight: 600,
                   color: 'var(--accent-purple)',
                 }}
@@ -95,7 +114,7 @@ export default function About() {
                   background: 'var(--bg-subtle)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-full)',
-                  fontSize: '0.85rem',
+                  fontSize: '0.84rem',
                   fontWeight: 600,
                   color: 'var(--text-secondary)',
                 }}
@@ -112,7 +131,7 @@ export default function About() {
                 className="btn btn-secondary"
                 style={{
                   gap: '8px',
-                  padding: '13px 26px',
+                  padding: '12px 24px',
                 }}
               >
                 <span>Download CV</span>
@@ -122,15 +141,16 @@ export default function About() {
           </div>
 
           {/* Right Workspace Visual */}
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative' }} className="about-visual-col">
             {/* Subtle decorative offset border box */}
             <div
+              className="about-offset-border"
               style={{
                 position: 'absolute',
-                top: '16px',
-                left: '16px',
-                right: '-16px',
-                bottom: '-16px',
+                top: '14px',
+                left: '14px',
+                right: '-14px',
+                bottom: '-14px',
                 borderRadius: 'var(--radius-xl)',
                 border: '1px solid var(--accent-lavender-border)',
                 backgroundColor: 'var(--bg-lavender-light)',
@@ -154,22 +174,23 @@ export default function About() {
                 alt="Hana Habtamu Development Workspace"
                 style={{
                   width: '100%',
-                  height: '100%',
+                  height: 'auto',
+                  maxHeight: '440px',
                   objectFit: 'cover',
                   display: 'block',
                 }}
               />
             </div>
 
-            {/* Small floating testimonial or design quote inspired by reference */}
+            {/* Small floating philosophy quote */}
             <div
-              className="editorial-card"
+              className="editorial-card about-quote-badge"
               style={{
                 position: 'absolute',
-                bottom: '-20px',
-                left: '-20px',
+                bottom: '-18px',
+                left: '-18px',
                 zIndex: 2,
-                padding: '18px 24px',
+                padding: '16px 20px',
                 maxWidth: '280px',
                 borderRadius: 'var(--radius-md)',
                 backgroundColor: '#ffffff',
@@ -200,21 +221,19 @@ export default function About() {
 
         {/* Clean Editorial Statistics Area */}
         <div
+          className="grid-stats-responsive"
           style={{
             borderTop: '1px solid var(--border-subtle)',
             borderBottom: '1px solid var(--border-subtle)',
-            padding: '32px 0',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '30px',
+            padding: 'clamp(24px, 4vw, 36px) 0',
           }}
         >
           {stats.map((item, idx) => (
-            <div key={idx} style={{ textAlign: 'center', padding: '0 16px' }}>
+            <div key={idx} style={{ textAlign: 'center', padding: '0 8px' }}>
               <div
                 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '2.6rem',
+                  fontSize: 'clamp(2rem, 4.5vw, 2.6rem)',
                   fontWeight: 700,
                   color: 'var(--text-dark)',
                   lineHeight: 1.1,
@@ -226,7 +245,7 @@ export default function About() {
               <div
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.78rem',
+                  fontSize: 'clamp(0.72rem, 1.8vw, 0.78rem)',
                   fontWeight: 600,
                   letterSpacing: '0.12em',
                   color: 'var(--accent-purple)',
@@ -239,6 +258,23 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 880px) {
+          .about-offset-border {
+            right: 0 !important;
+            bottom: 0 !important;
+          }
+          .about-quote-badge {
+            position: relative !important;
+            bottom: auto !important;
+            left: auto !important;
+            max-width: 100% !important;
+            margin-top: 14px !important;
+            box-shadow: var(--shadow-card) !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

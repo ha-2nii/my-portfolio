@@ -7,7 +7,7 @@ export default function Contact() {
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const placeholderEmail = 'hello@hanahabtamu.dev';
+  const placeholderEmail = 'hanahabtamu735@gmail.com';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(placeholderEmail);
@@ -27,15 +27,15 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container">
-        {/* Wide Lavender Banner Requested by User */}
+        {/* Editorial Collaboration Banner */}
         <div
           style={{
-            background: 'linear-gradient(135deg, #f4f0fd 0%, #ede8fc 50%, #fdfcff 100%)',
+            background: 'linear-gradient(135deg, #F3ECE0 0%, #E9E1D0 50%, #FFFBF4 100%)',
             border: '1px solid var(--accent-lavender-border)',
             borderRadius: 'var(--radius-xl)',
-            padding: '48px 32px',
+            padding: 'clamp(28px, 6vw, 48px) clamp(16px, 4vw, 32px)',
             textAlign: 'center',
-            marginBottom: '45px',
+            marginBottom: '40px',
             boxShadow: 'var(--shadow-card)',
           }}
         >
@@ -60,7 +60,7 @@ export default function Contact() {
           <h2
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)',
+              fontSize: 'clamp(1.8rem, 4.5vw, 3.2rem)',
               color: 'var(--text-dark)',
               marginBottom: '12px',
             }}
@@ -70,10 +70,10 @@ export default function Contact() {
 
           <p
             style={{
-              fontSize: '1.15rem',
+              fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
               color: 'var(--text-secondary)',
               maxWidth: '520px',
-              margin: '0 auto 32px auto',
+              margin: '0 auto 28px auto',
               lineHeight: 1.6,
             }}
           >
@@ -81,11 +81,11 @@ export default function Contact() {
           </p>
 
           <a
-            href="mailto:hello@hanahabtamu.dev"
+            href="mailto:hanahabtamu735@gmail.com"
             className="btn btn-primary"
             style={{
-              padding: '14px 34px',
-              fontSize: '1rem',
+              padding: '13px 30px',
+              fontSize: '0.96rem',
             }}
           >
             <span>Let's Talk</span>
@@ -97,8 +97,8 @@ export default function Contact() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '40px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+            gap: 'clamp(28px, 4vw, 40px)',
             alignItems: 'flex-start',
           }}
         >
@@ -108,15 +108,15 @@ export default function Contact() {
             <h3
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '2rem',
+                fontSize: 'clamp(1.6rem, 3.5vw, 2rem)',
                 color: 'var(--text-dark)',
-                marginBottom: '16px',
+                marginBottom: '14px',
               }}
             >
               Start a Conversation
             </h3>
 
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: 1.7, marginBottom: '24px' }}>
               Whether you want to discuss full-stack web applications, front-end design, or prospective opportunities, I would love to connect.
             </p>
 
@@ -124,35 +124,45 @@ export default function Contact() {
             <div
               className="editorial-card"
               style={{
-                padding: '18px 22px',
+                padding: '16px 20px',
                 display: 'flex',
+                flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '16px',
+                gap: '12px',
                 marginBottom: '24px',
                 backgroundColor: 'var(--bg-lavender-light)',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flex: '1 1 200px' }}>
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '40px',
+                    height: '40px',
                     borderRadius: 'var(--radius-sm)',
                     backgroundColor: 'var(--bg-lavender)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'var(--accent-purple)',
+                    flexShrink: 0,
                   }}
                 >
-                  <Mail size={20} />
+                  <Mail size={18} />
                 </div>
-                <div>
-                  <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+                <div style={{ minWidth: 0, overflow: 'hidden' }}>
+                  <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
                     EMAIL ADDRESS
                   </div>
-                  <div style={{ fontWeight: 700, color: 'var(--text-dark)', fontSize: '0.96rem' }}>
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      color: 'var(--text-dark)',
+                      fontSize: 'clamp(0.86rem, 2.5vw, 0.96rem)',
+                      overflowWrap: 'anywhere',
+                      wordBreak: 'break-all',
+                    }}
+                  >
                     {placeholderEmail}
                   </div>
                 </div>
@@ -161,7 +171,7 @@ export default function Contact() {
               <button
                 onClick={handleCopy}
                 className="btn btn-secondary"
-                style={{ padding: '8px 16px', fontSize: '0.82rem' }}
+                style={{ padding: '8px 16px', fontSize: '0.82rem', minHeight: '38px', flexShrink: 0 }}
                 title="Copy email to clipboard"
               >
                 {copied ? <Check size={14} color="var(--accent-purple)" /> : <Copy size={14} />}
@@ -192,7 +202,7 @@ export default function Contact() {
                 <LinkedinIcon size={18} />
               </a>
               <a
-                href="mailto:hello@hanahabtamu.dev"
+                href="mailto:hanahabtamu735@gmail.com"
                 className="btn-icon"
                 title="Email"
                 aria-label="Send Email"
@@ -206,7 +216,7 @@ export default function Contact() {
           <div
             className="editorial-card"
             style={{
-              padding: '36px',
+              padding: 'clamp(20px, 4.5vw, 36px)',
               backgroundColor: '#ffffff',
               borderRadius: 'var(--radius-lg)',
             }}

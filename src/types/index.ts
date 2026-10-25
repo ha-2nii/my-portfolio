@@ -6,6 +6,11 @@ export interface Project {
   title: string;
   type: string;
   image: string;
+  mockupImage?: string;
+  category?: string;
+  badge?: string;
+  shortTitle?: string;
+  liveLabel?: string;
   description: string;
   technologies: string[];
   highlights: string[];

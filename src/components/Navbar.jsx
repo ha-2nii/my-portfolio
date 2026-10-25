@@ -6,11 +6,17 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  // true when scrolled past the hero section
+  const [isAtHero, setIsAtHero] = useState(true);
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 25);
+      // Hero section ends roughly at viewport height
+      setIsAtHero(scrollY < window.innerHeight * 0.85);
 
-      const sections = ['home', 'about', 'projects', 'skills', 'experience', 'contact'];
+      const sections = ['home', 'skills', 'projects', 'about', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 130;
 
       for (const section of sections) {
@@ -70,11 +76,11 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 100,
-          transition: 'all 0.3s ease',
-          backgroundColor: 'rgba(255, 251, 244, 0.94)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: isScrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
+          transition: 'background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, padding 0.3s ease',
+          backgroundColor: isAtHero ? 'rgba(255, 255, 255, 0.0)' : 'rgba(255, 251, 244, 0.94)',
+          backdropFilter: isAtHero ? 'none' : 'blur(16px)',
+          WebkitBackdropFilter: isAtHero ? 'none' : 'blur(16px)',
+          borderBottom: isScrolled && !isAtHero ? '1px solid var(--border-subtle)' : '1px solid transparent',
           padding: isScrolled ? '12px 0' : '18px 0',
         }}
       >
@@ -177,7 +183,20 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="desktop-cta" style={{ display: 'none', alignItems: 'center' }}>
+          <div className="desktop-cta" style={{ display: 'none', alignItems: 'center', gap: '10px' }}>
+            <a
+              href="/Hana_Habtamu_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary"
+              style={{
+                padding: '8px 16px',
+                fontSize: '0.84rem',
+              }}
+            >
+              <span>CV</span>
+            </a>
+
             <a
               href="#contact"
               className="btn btn-primary"
@@ -265,6 +284,16 @@ export default function Navbar() {
                 )}
               </a>
             ))}
+            <a
+              href="/Hana_Habtamu_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="btn btn-secondary"
+              style={{ width: '100%', marginTop: '6px', minHeight: '44px' }}
+            >
+              <span>View Resume / CV (PDF)</span>
+            </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}

@@ -1,5 +1,5 @@
 import workspaceImg from '../assets/workspace.jpg';
-import { ArrowDown, GraduationCap, MapPin, Sparkles, Trophy } from 'lucide-react';
+import { ArrowDown, GraduationCap, MapPin, Trophy, FileText, ExternalLink } from 'lucide-react';
 
 export default function About() {
   const stats = [
@@ -124,18 +124,36 @@ export default function About() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div>
+            {/* CTA Buttons */}
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
               <a
-                href="#contact"
-                className="btn btn-secondary"
+                href="/Hana_Habtamu_CV.pdf"
+                download="Hana_Habtamu_CV.pdf"
+                className="btn btn-primary"
                 style={{
                   gap: '8px',
                   padding: '12px 24px',
+                  textDecoration: 'none',
                 }}
               >
+                <ArrowDown size={16} />
                 <span>Download CV</span>
-                <ArrowDown size={16} color="var(--accent-purple)" />
+              </a>
+
+              <a
+                href="/Hana_Habtamu_CV.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+                style={{
+                  gap: '8px',
+                  padding: '12px 20px',
+                  textDecoration: 'none',
+                }}
+              >
+                <FileText size={16} />
+                <span>View CV</span>
+                <ExternalLink size={13} />
               </a>
             </div>
           </div>
@@ -175,46 +193,12 @@ export default function About() {
                 style={{
                   width: '100%',
                   height: 'auto',
-                  maxHeight: '440px',
+                  maxHeight: '520px',
                   objectFit: 'cover',
+                  objectPosition: 'center',
                   display: 'block',
                 }}
               />
-            </div>
-
-            {/* Small floating philosophy quote */}
-            <div
-              className="editorial-card about-quote-badge"
-              style={{
-                position: 'absolute',
-                bottom: '-18px',
-                left: '-18px',
-                zIndex: 2,
-                padding: '16px 20px',
-                maxWidth: '280px',
-                borderRadius: 'var(--radius-md)',
-                backgroundColor: '#ffffff',
-                border: '1px solid var(--accent-lavender-border)',
-                boxShadow: 'var(--shadow-hover)',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <Sparkles size={16} color="var(--accent-purple)" />
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    color: 'var(--accent-purple)',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Philosophy
-                </span>
-              </div>
-              <p style={{ fontSize: '0.86rem', color: 'var(--text-dark)', lineHeight: 1.5, margin: 0 }}>
-                "Good software is understandable, responsive and enjoyable to use."
-              </p>
             </div>
           </div>
         </div>
@@ -264,14 +248,6 @@ export default function About() {
           .about-offset-border {
             right: 0 !important;
             bottom: 0 !important;
-          }
-          .about-quote-badge {
-            position: relative !important;
-            bottom: auto !important;
-            left: auto !important;
-            max-width: 100% !important;
-            margin-top: 14px !important;
-            box-shadow: var(--shadow-card) !important;
           }
         }
       `}</style>

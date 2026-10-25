@@ -4,6 +4,9 @@
   --color-olive-drab: #565449;
   --color-bone: #D8CFBC;
   --color-floral-white: #FFFBF4;
+  --color-brown: #73482C;
+  --color-brown-hover: #5A3720;
+  --color-brown-light: #8C5838;
 
   /* Surfaces & Backgrounds */
   --bg-main: #FFFBF4;
@@ -42,6 +45,7 @@
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-cursive: 'Caveat', cursive;
 
   /* Radii */
   --radius-sm: 8px;
@@ -136,20 +140,20 @@ button, input, textarea {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 56px);
+  padding: 0 clamp(16px, 2.5vw, 32px);
 }
 
 .section {
-  padding: clamp(40px, 6vw, 70px) 0;
+  padding: clamp(24px, 3.5vw, 40px) 0;
   position: relative;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: clamp(32px, 5vw, 48px) 0;
+    padding: clamp(20px, 3vw, 32px) 0;
   }
 }
 
@@ -259,6 +263,10 @@ button, input, textarea {
   transform: translateY(-4px);
 }
 
+.editorial-card:hover .skill-3d-visual-img {
+  transform: scale(1.05);
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -285,26 +293,27 @@ button, input, textarea {
 }
 
 .btn-primary {
-  background-color: var(--color-smoky-black);
+  background-color: var(--color-brown);
   color: var(--color-floral-white);
-  box-shadow: var(--shadow-btn);
+  box-shadow: 0 4px 18px rgba(115, 72, 44, 0.28);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-olive-drab);
+  background-color: var(--color-brown-hover);
+  color: var(--color-floral-white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(17, 18, 13, 0.28);
+  box-shadow: 0 6px 20px rgba(90, 55, 32, 0.35);
 }
 
 .btn-secondary {
   background-color: #ffffff;
-  color: var(--text-dark);
+  color: var(--color-brown);
   border: 1px solid var(--border-light);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-olive-drab);
-  color: var(--color-olive-drab);
+  border-color: var(--color-brown);
+  color: var(--color-brown-hover);
   background-color: var(--bg-lavender-light);
   transform: translateY(-2px);
 }
@@ -318,13 +327,13 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: var(--color-brown);
   transition: all var(--transition-fast);
 }
 
 .btn-icon:hover {
-  border-color: var(--color-olive-drab);
-  color: var(--text-dark);
+  border-color: var(--color-brown);
+  color: var(--color-brown-hover);
   background: var(--bg-lavender);
   transform: translateY(-2px);
 }
@@ -345,9 +354,9 @@ button, input, textarea {
 }
 
 .skill-tag:hover {
-  background: var(--color-smoky-black);
+  background: var(--color-brown);
   color: var(--color-floral-white);
-  border-color: var(--color-smoky-black);
+  border-color: var(--color-brown);
 }
 
 /* Floating Skill Pills on Hero */

@@ -149,7 +149,14 @@ export default function Footer() {
                 <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', display: 'block' }}>
                   PHONE
                 </span>
-                <span>+251 900 000 000</span>
+                <a
+                  href="tel:+251703966240"
+                  style={{ color: 'var(--text-dark)', fontWeight: 500 }}
+                  onMouseEnter={(e) => (e.target.style.color = 'var(--color-brown)')}
+                  onMouseLeave={(e) => (e.target.style.color = 'var(--text-dark)')}
+                >
+                  +251 703 966 240
+                </a>
               </div>
 
               <div style={{ display: 'flex', gap: '10px', marginTop: '6px' }}>

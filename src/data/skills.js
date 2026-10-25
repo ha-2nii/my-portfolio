@@ -1,6 +1,6 @@
 export const skillGroups = [
   {
-    category: 'Frontend & Mobile Development',
+    category: 'Frontend & Mobile application Development',
     subtitle: 'Crafting responsive web applications and touch-friendly mobile interfaces',
     skills: [
       { name: 'React', description: 'Functional components, hooks, state management & component lifecycle' },

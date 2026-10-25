@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowDown } from 'lucide-react';
-import hanaImg from '../assets/hana-hero.jpg';
+import { ArrowRight, ArrowDown, FileText } from 'lucide-react';
+import hanaImg from '../assets/hana-hero-cropped.jpg';
 
 export default function Hero() {
   return (
@@ -114,6 +114,17 @@ export default function Hero() {
               <ArrowRight size={17} />
             </a>
 
+            <a
+              href="/Hana_Habtamu_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary"
+              style={{ textDecoration: 'none', gap: '8px' }}
+            >
+              <FileText size={16} />
+              <span>Resume / CV</span>
+            </a>
+
             <a href="#about" className="btn btn-secondary">
               <span>About Me</span>
             </a>
@@ -121,7 +132,7 @@ export default function Hero() {
 
           {/* Scroll Down Indicator */}
           <div>
-            <a href="#capabilities" className="scroll-indicator">
+            <a href="#skills" className="scroll-indicator">
               <ArrowDown size={14} color="var(--accent-purple)" />
               <span>SCROLL DOWN</span>
             </a>
@@ -173,7 +184,7 @@ export default function Hero() {
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            object-position: center 20% !important;
+            object-position: center 25% !important;
           }
         }
       `}</style>

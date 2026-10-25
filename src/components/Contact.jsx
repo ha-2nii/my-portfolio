@@ -1,18 +1,27 @@
 import { useState } from 'react';
-import { Mail, ArrowUpRight, Copy, Check, Send, Sparkles } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, Copy, Check, Send, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const placeholderEmail = 'hanahabtamu735@gmail.com';
+  const phoneNumber = '+251703966240';
+  const formattedPhone = '+251 703 966 240';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(placeholderEmail);
     setCopied(true);
     setTimeout(() => setCopied(false), 3000);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(phoneNumber);
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 3000);
   };
 
   const handleSubmit = (e) => {
@@ -177,6 +186,75 @@ export default function Contact() {
                 {copied ? <Check size={14} color="var(--accent-purple)" /> : <Copy size={14} />}
                 <span>{copied ? 'Copied' : 'Copy'}</span>
               </button>
+            </div>
+
+            {/* Phone Number Card */}
+            <div
+              className="editorial-card"
+              style={{
+                padding: '16px 20px',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '12px',
+                marginBottom: '24px',
+                backgroundColor: 'var(--bg-lavender-light)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flex: '1 1 200px' }}>
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--bg-lavender)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--color-brown)',
+                    flexShrink: 0,
+                  }}
+                >
+                  <Phone size={18} />
+                </div>
+                <div style={{ minWidth: 0, overflow: 'hidden' }}>
+                  <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+                    PHONE NUMBER
+                  </div>
+                  <a
+                    href={`tel:${phoneNumber}`}
+                    style={{
+                      fontWeight: 700,
+                      color: 'var(--text-dark)',
+                      fontSize: 'clamp(0.86rem, 2.5vw, 0.96rem)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {formattedPhone}
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <a
+                  href={`tel:${phoneNumber}`}
+                  className="btn btn-secondary"
+                  style={{ padding: '8px 14px', fontSize: '0.82rem', minHeight: '38px', flexShrink: 0 }}
+                  title="Call phone number"
+                >
+                  <span>Call</span>
+                </a>
+                <button
+                  onClick={handleCopyPhone}
+                  className="btn btn-secondary"
+                  style={{ padding: '8px 14px', fontSize: '0.82rem', minHeight: '38px', flexShrink: 0 }}
+                  title="Copy phone to clipboard"
+                >
+                  {phoneCopied ? <Check size={14} color="var(--accent-purple)" /> : <Copy size={14} />}
+                  <span>{phoneCopied ? 'Copied' : 'Copy'}</span>
+                </button>
+              </div>
             </div>
 
             {/* Social Placeholder Links */}
